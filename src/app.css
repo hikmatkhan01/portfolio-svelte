@@ -1,0 +1,64 @@
+
+/* src/app.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.menu {
+    display: flex;
+    gap: 20px; /* Spacing between menu items */
+  }
+  nav h1{
+    font-size: 2vw;
+    line-height: 1.6vw;
+    text-align: left;
+    position: relative;
+  }
+  .hover-h4 {
+    margin: 0;
+    padding: 0;
+    color:#000000bb;
+ 
+  }
+  
+  .hover-link {
+    text-decoration: none;
+    color: #000000bb;
+    background-color: #EFEAE3;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 50px;
+    font-size: 18px;
+    position: relative;
+    z-index: 1;
+    border: 1px solid #1b0f0f89;
+    transition: color 0.4s ease;
+    overflow: hidden; /* To ensure the ::after overlay stays within bounds */
+  }
+  
+  /* Create the overlay using ::after */
+  .hover-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0; /* Adjust to start from the top */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+
+    transform: translateY(100%); /* Start the overlay at the bottom */
+    transition: transform 0.4s ease;
+    border-radius: 50px;
+    z-index: 0; /* Place below the text */
+  }
+  
+  /* When hovering on the a tag, slide the overlay up */
+  .hover-link:hover::after {
+    transform: translateY(0);
+  }
+  
+  /* Keep the text color the same on hover */
+  .hover-link:hover {
+    color: blue;
+  }
