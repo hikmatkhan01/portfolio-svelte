@@ -1,4 +1,24 @@
 <script>
+  import ContentBottom from "./ContentBottom.svelte";
+  import Icons from "./Icons.svelte";
+  let socialLinks = [
+    {
+      link: "https://www.linkedin.com",
+      Icons: "fa-brands fa-linkedin-in",
+    },
+    {
+      link: "skype:your_skype_id",
+      Icons: "fab fa-skype",
+    },
+    {
+      link: "https://twitter.com",
+      Icons: "fab fa-twitter",
+    },
+    {
+      link: "https://www.facebook.com",
+      Icons: "fa-brands fa-facebook-f",
+    },
+  ];
 </script>
 
 <div class="content flex justify-between w-full md:w-[100%] bg-gray-500">
@@ -30,65 +50,12 @@
         mobile and web solutions.
       </p>
 
-      <div class="icons mt-10">
-        <div class="flex space-x-4">
-          <a
-            href="https://www.linkedin.com"
-            target="_blank"
-            class="text-black bg-white shadow-lg p-3 rounded-full hover:bg-gray-100 h-[50px] w-[50px] flex justify-center
-            items-center transition-all duration-[1000ms] ease-linear transform hover:-translate-y-2"
-          >
-            <i class="fa-brands fa-linkedin-in rounded-full"></i>
-          </a>
-          <a
-            href="skype:your_skype_id"
-            class="text-black bg-white shadow-lg p-3 rounded-full hover:bg-gray-100 h-[50px] w-[50px] flex justify-center
-            items-center transition-all duration-[1000ms] ease-linear transform hover:-translate-y-2"
-          >
-            <i class="fab fa-skype rounded-full"></i>
-          </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            class="text-black bg-white shadow-lg p-3 rounded-full hover:bg-gray-100 h-[50px] w-[50px] flex justify-center
-            items-center transition-all duration-[1000ms] ease-linear transform hover:-translate-y-2"
-          >
-            <i class="fab fa-twitter rounded-full"></i>
-          </a>
-          <a
-            href="https://www.facebook.com"
-            target="_blank"
-            class="text-black bg-white shadow-lg p-3 rounded-full hover:bg-gray-100 h-[50px] w-[50px] flex justify-center
-            items-center transition-all duration-[1000ms] ease-linear transform hover:-translate-y-2"
-          >
-            <i class="fa-brands fa-facebook-f rounded-full"></i>
-          </a>
-        </div>
-      </div>
+      <Icons socialLink={socialLinks} />
     </div>
-
-    <div class="bottom-right1 flex mt-10 bg-white shadow-lg rounded-2xl gap-3">
-      <div class="experince w-[300px] p-4 bg-blue-700 shadow-lg rounded-2xl">
-        <h1>2+</h1>
-        <span>
-          <span class="text-white"> Years Exp</span>erience
-          <p></p>
-        </span>
-      </div>
-      <div class="projects w-[300px] p-4 bg-blue-700 shadow-lg rounded-2xl">
-        <h1>10+</h1>
-        <span>
-          <span class="text-white"> Years Exp</span>erience
-          <p></p>
-        </span>
-      </div>
-      <div class="language w-[300px] p-4 bg-blue-700 shadow-lg rounded-2xl">
-        <h1>5+</h1>
-        <span>
-          <span class="text-white"> Years Exp</span>erience
-          <p></p>
-        </span>
-      </div>
+    <div
+      class="bottom-right1 flex mt-4 bg-slate-600 shadow-lg rounded-2xl gap-3"
+    >
+      <ContentBottom titleh1="2+" span1="Years Exp " span2="experince" />
     </div>
   </div>
 </div>
